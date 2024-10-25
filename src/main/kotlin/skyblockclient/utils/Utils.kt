@@ -78,4 +78,7 @@ object Utils {
         method.isAccessible = true
         method.invoke(Minecraft.getMinecraft())
     }
+
+    fun ItemStack.getDisplayName(): String =
+        this.tagCompound?.getCompoundTag("display")?.takeIf { it.hasKey("Name", 8) }?.getString("Name") ?: this.item.getItemStackDisplayName(this)
 }
