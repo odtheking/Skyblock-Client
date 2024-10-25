@@ -120,7 +120,7 @@ object AutoTerminals {
                 if (chestName.length > chestName.indexOf("'") + 1) {
                     val letterNeeded = chestName[chestName.indexOf("'") + 1]
                     clicks.addAll(chestSlots.filter {
-                        it.stack?.isItemEnchanted == false && stripControlCodes(it.stack?.getDisplayName())[0] == letterNeeded && with(
+                        it.stack?.isItemEnchanted == false && stripControlCodes(it?.stack?.getDisplayName())[0] == letterNeeded && with(
                             it.slotNumber
                         ) {
                             this in 10..43 && this % 9 in 1..7
